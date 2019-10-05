@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  {path:'hero', loadChildren:'./heroes/heroes.module#HeroesModule'}
+  {path:'hero', loadChildren:()=>import('./heroes/heroes.module').then(m=>m.HeroesModule)},
+  {path:'observable', loadChildren:()=> import('./observable/observable.module').then(m=> m.ObservableModule)}
+
 ];
 
 @NgModule({
