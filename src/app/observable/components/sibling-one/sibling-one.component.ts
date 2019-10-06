@@ -8,6 +8,11 @@ import { CommunicatorService } from '../../communicator.service';
   {{status}}
         <h6 style="margin-bottom: 0">VALUES:</h6>
       <div *ngFor="let value of values">* {{ value }}</div>
+      <button (click)="getFullName()">Get data From sibling-two</button>
+      <div>
+        <label for="show-fullname">User's full name:</label>
+        <h5 id="show-fullname" style="display:inline">{{fullName}}</h5>
+      </div>
 
   `,
   styles:[`
@@ -17,6 +22,7 @@ export class SiblingOneComponent{
   private data: Observable<Array<number>>;
   private values = [];
   status
+  fullName:string;
 
   constructor(private communicatorService: CommunicatorService) {
     // this.init();
@@ -49,5 +55,9 @@ export class SiblingOneComponent{
             .then(() => this.status = "Ended");
   }
 
-
+  getFullName(){
+    this.communicatorService.getFullNameWithHelpOfPromise().subscribe((res:string)=>{
+      this.fullName = res;
+    })
+  }
 }

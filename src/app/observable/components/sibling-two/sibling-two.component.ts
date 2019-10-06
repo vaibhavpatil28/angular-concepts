@@ -5,8 +5,10 @@ import { CommunicatorService } from '../../communicator.service';
 @Component({
   selector: 'sibling-two',
   template: `
-  <button>Send data From sibling</button>
-
+  <h4>Sibling Two</h4>
+  <div>
+    <input type="text" placeholder="Full Name" (input)="collectInputValue($event)"/>
+  </div>
   `,
   styles: [`
   `]
@@ -20,5 +22,8 @@ export class SiblingTwoComponent {
     if (status) {
       return Math.floor((Math.random() * 100) + 1);
     }
+  }
+  collectInputValue(event){
+    this.communicatorService.getInputValuePromise = this.communicatorService.iGiveYouAPromise(event.srcElement.value);
   }
 }
