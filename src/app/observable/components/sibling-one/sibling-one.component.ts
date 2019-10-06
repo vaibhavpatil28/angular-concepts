@@ -58,6 +58,9 @@ export class SiblingOneComponent{
   getFullName(){
     this.communicatorService.getFullNameWithHelpOfPromise().subscribe((res:string)=>{
       this.fullName = res;
+    },err=>{
+      console.log('error=>',err);
+      
     })
   }
 }

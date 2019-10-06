@@ -38,14 +38,20 @@ export class CommunicatorService {
             }
         });
     }
-    getFullNameWithHelpOfPromise(){
-        return new Observable((subscriber)=>{
-            this.getInputValuePromise.then((resolveVal)=>{
-                subscriber.next(resolveVal);
-                subscriber.complete();
-            }, (rejectVal)=>{
-                subscriber.error(rejectVal);
-            })
-        })
+    getFullNameWithHelpOfPromise() {
+        return new Observable<string>((subscriber) => {
+            try {
+                this.getInputValuePromise.then((resolveVal) => {
+                    subscriber.next(resolveVal);
+                    subscriber.complete();
+                }, (rejectVal) => {
+                    subscriber.error(rejectVal);
+                })
+                return;
+            } catch (error) {
+                console.log('In error block of observable!!!!!!!!!!!!');
+                subscriber.error(error);
+            }
+        });
     }
 }
