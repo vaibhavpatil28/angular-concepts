@@ -27,9 +27,11 @@ export class SiblingOneComponent{
   constructor(private communicatorService: CommunicatorService) {
     // this.init();
     this.communicatorService.getData(true).subscribe(res=>{
+      console.log('res1',res);
       this.values.push(res)
     });
     this.communicatorService.getData(true).subscribe(res=>{
+      console.log('res2',res);
       this.values.push(res)
     })
   }
