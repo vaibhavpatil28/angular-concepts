@@ -1,0 +1,11 @@
+<!-- <form [formGroup]="nestedForm">
+    <app-basic-info formControlName="basicInfo"></app-basic-info>
+    <button (click)="onSubmit()" [disabled]="nestedForm.invalid">Place Order</button>
+</form> -->
+
+<div class="container">
+    <form [formGroup]="nestedForm">
+        <app-basic-info formControlName="basicInfo"></app-basic-info>
+        <button type="button" (click)="onSubmit()" [disabled]="nestedForm.invalid">Place Order</button>
+    </form>
+</div>
