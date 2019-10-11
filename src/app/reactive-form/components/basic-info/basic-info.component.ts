@@ -1,5 +1,6 @@
 import { Component, OnInit, forwardRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl, ValidationErrors, NG_VALUE_ACCESSOR, NG_VALIDATORS, FormControl, ControlValueAccessor } from '@angular/forms';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-basic-info',
@@ -39,6 +40,9 @@ export class BasicInfoComponent implements OnInit, ControlValueAccessor, Validat
   registerOnChange(fn: any): void {
     console.log("on change");
     this.basicInfoForm.valueChanges.subscribe(fn);
+    this.basicInfoForm.controls.email.valueChanges.pipe(
+      map(value => { return { controlName: 'email', value } })
+    ).subscribe(fn);
   }
 
   registerOnTouched(fn: any): void {

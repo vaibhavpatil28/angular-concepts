@@ -17,8 +17,13 @@ export class NestedFormsPageComponent implements OnInit {
     });
     this.nestedForm.controls.basicInfo.valueChanges.subscribe(res => {
       console.log('nestedForm valueChanges', res);
+    });
+    this.nestedForm.controls.basicInfo.patchValue({
+      fname: 'test',
+      email: 'email@g.com'
+    });
+    console.log('this.nestedForm.controls.basicInfo', this.nestedForm.controls.basicInfo);
 
-    })
   }
   public onSubmit() {
     console.log("Billing Info", this.nestedForm.value);
