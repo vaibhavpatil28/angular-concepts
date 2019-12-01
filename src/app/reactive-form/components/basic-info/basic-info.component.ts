@@ -27,7 +27,7 @@ export class BasicInfoComponent implements OnInit, ControlValueAccessor, Validat
       email: new FormControl("", [Validators.required])
     });
 
-  constructor(private fb: FormBuilder) { }
+  constructor() { }
   ngOnInit() {
   }
 
