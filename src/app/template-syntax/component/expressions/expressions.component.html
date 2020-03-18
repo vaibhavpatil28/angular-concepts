@@ -1,8 +1,14 @@
-<h3>Interpolation : </h3>
+<h3>1. Interpolation : </h3>
 <p>Current customer: {{ currentCustomer }}</p>
 
-<h3>Template Expression : </h3>
+<h3>2. Template Expression : </h3>
 <!-- "The sum of 1 + 1 is not 4" -->
 <p>The sum of 1 + 1 is not {{1 + 1 + getVal()}}.</p>
 
 <p AccessPublicMember #accessPublicMember="AccessPublicMember">Access public member of directive i.e username: {{accessPublicMember.username}}</p>
+
+<!-- Get user input from a template reference variable -->
+<h3>3. Get user input from a template reference variable</h3>
+<input type="text" #inputRef >
+<h5>inputed text : {{inputRef.value}}</h5>
+<button (click)="0">update ui</button>
