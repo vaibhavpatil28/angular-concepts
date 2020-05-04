@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TemplateSyntaxRoutingModule } from '../../template-syntax-routing.module';
+// import { TemplateSyntaxRoutingModule } from '../../template-syntax-routing.module';
 
 @Component({
   selector: 'app-template-syntax-menu',
@@ -8,7 +8,7 @@ import { TemplateSyntaxRoutingModule } from '../../template-syntax-routing.modul
 })
 export class TemplateSyntaxMenuComponent implements OnInit {
 
-  routes = TemplateSyntaxRoutingModule.getRoutes()[0].children;
+  // routes = TemplateSyntaxRoutingModule.getRoutes()[0].children;
   constructor() { }
 
   ngOnInit() {
