@@ -20,7 +20,7 @@ import { CommunicatorService } from '../../communicator.service';
 })
 export class SiblingOneComponent{
   private data: Observable<Array<number>>;
-  private values = [];
+  values = [];
   status
   fullName:string;
 
