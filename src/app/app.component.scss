@@ -1,0 +1,21 @@
+.heading {
+  text-align: center;
+  background-color: #fb770d;
+  color: #ffffe0;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+nav {
+  background-color: #fb770d;
+  padding: 10px 0px;
+  color: #ffffe0;
+  ::ng-deep app-menu {
+    a {
+      color: #ffffe0;
+      text-decoration: none;
+    }
+    a:visited {
+      color: #ffebdb;
+    }
+  }
+}

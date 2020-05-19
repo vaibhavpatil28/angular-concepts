@@ -1,0 +1,12 @@
+:host {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  .footer {
+    text-align: center;
+    background-color: #25424c;
+    color: #ffffe0;
+    padding:10px;
+  }
+}
