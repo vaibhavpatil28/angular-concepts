@@ -13,5 +13,7 @@ export class AppComponent {
   routes = AppRoutingModule.getRoutes();
   constructor() {
   }
-  
+  onMenuFocus(event){
+    console.log('onMenuFocus: ', event);
+  }
 }

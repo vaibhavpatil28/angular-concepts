@@ -6,6 +6,6 @@
     Learn {{ title }}!
   </h1>
   <span>Main menu : </span>
-  <app-menu [menu]="routes"></app-menu>
+  <app-menu [menu]="routes" (menuFocus)="onMenuFocus($event)"></app-menu>
 </nav>
 <router-outlet></router-outlet>

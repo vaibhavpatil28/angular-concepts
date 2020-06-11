@@ -1,1 +1,1 @@
-<a class="ml-2" *ngFor="let item of menu" [routerLink]="item.path">{{item.name || item.path}}</a>
+<a class="ml-2" *ngFor="let item of menu" [routerLink]="item.path" (focus)="onMenuFocus($event)">{{item.name || item.path}}</a>

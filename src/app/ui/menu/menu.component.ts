@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 
 export class Menu {
   name:string;
@@ -12,9 +13,15 @@ export class Menu {
 export class MenuComponent implements OnInit {
 
   @Input() menu: Menu[];
+  @Output() menuFocus = new Subject();
+  // @Output() menuFocus = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
+  }
+  onMenuFocus(event){
+    this.menuFocus.next('this is @Output() event created by Rxjs Subject');
+    // this.menuFocus.emit('Menu is focued');
   }
 
 }
