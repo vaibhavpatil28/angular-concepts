@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnChanges} from '@angular/core';
 import { Observable } from 'rxjs';
 import { CommunicatorService } from '../../communicator.service';
 
@@ -18,7 +18,7 @@ import { CommunicatorService } from '../../communicator.service';
   styles:[`
   `]
 })
-export class SiblingOneComponent{
+export class SiblingOneComponent implements OnChanges{
   private data: Observable<Array<number>>;
   values = [];
   status
@@ -34,6 +34,10 @@ export class SiblingOneComponent{
       console.log('res2',res);
       this.values.push(res)
     })
+  }
+  ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
+    console.log('ngOnChanges::');
+    
   }
 
   init() {
